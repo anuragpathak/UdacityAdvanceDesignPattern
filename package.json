@@ -1,0 +1,19 @@
+{
+  "name": "premiumcatclicker",
+  "version": "1.0.0",
+  "description": "A sample project for Udacity Course - Premium Cat Clicker",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anuragpathak/UdacityAdvanceDesignPattern.git"
+  },
+  "author": "Anurag Pathak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anuragpathak/UdacityAdvanceDesignPattern/issues"
+  },
+  "homepage": "https://github.com/anuragpathak/UdacityAdvanceDesignPattern#readme"
+}
