@@ -15,6 +15,12 @@ header {
     padding-top: 25px;
 }
 
+@media only screen and (max-width: 300px) {
+    header {
+        font-size: 20px;
+    }
+}
+
 aside {
     height: auto;
     display: inline-block;
