@@ -1,0 +1,47 @@
+#container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+    text-align: center;
+    margin: auto;
+    color: #f3f3f3;
+    font-size: 30px;
+    font-weight: 550;
+    padding-top: 25px;
+}
+
+aside {
+    height: auto;
+    display: inline-block;
+    width: 20%;
+    max-width: 250px;
+    box-shadow: 6px 0px 14px 0px #1fc8db;
+}
+
+img {
+    width: 100%;
+}
+
+.cat-entry {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    margin: auto;
+    padding: 0px;
+}
+
+.cat-image {
+    height: calc(100% - 50px);
+    max-width: calc(80% - 4px);
+    display: inline-block;
+}
+
+.cat-image > div {
+    height: 100%;
+    width: 100%;
+}

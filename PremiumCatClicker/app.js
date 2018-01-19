@@ -1,42 +1,46 @@
 // Code goes here
+// Input cat data
+/* globals document fetch */
+let catsData;
 
-//Input cat data
-const catsData = [
-    {
-      id: 0, //Unique identifier for cat
-      name: 'Billi 1', //name of cat
-      imageURL: 'http://www.catster.com/wp-content/uploads/2017/06/small-kitten-meowing.jpg', // Image URL
-      clickCount: 0 //number of times it has been clicked
-    },
-    {
-      id: 1,
-      name: 'Billi 2',
-      imageURL: 'http://globalmedicalco.com/photos/globalmedicalco/6/28221.jpg',
-      clickCount: 0
-    }
-  ];
-  
-  //Function called on load, parses data and adds cat to dom
-  function onLoad(){
-    const container = document.getElementById('container');
-    catsData.forEach(cat => {
-      let catDiv = `<div>
-                      <h3>${cat.name}</h3>
-                      <img src="${cat.imageURL}" onClick="increment(event, ${cat.id})"/>
-                      <span></span>
-                    </div>`;
+function fetchCatData() {
+  return fetch('./cat.json').then(response => response.json());
+}
+
+// Function called on load, parses data and adds cat to dom
+/* exported onLoad */
+function onLoad() {
+  const container = document.getElementById('catlist');
+  fetchCatData().then((cats) => {
+    catsData = cats;
+    cats.forEach((cat) => {
+      const catDiv = `<ul class="cat-entry">
+                        <li class="cat-name" onClick="showCatImage(${cat.id})">${cat.name}</li>
+                      </ul>`;
       container.insertAdjacentHTML('beforeend', catDiv);
     });
-  }
-  
-  /**on click function for cats  which increments cat counter
+  });
+}
+
+function showCorrectCatCounter(catid) {
+  const countContainer = document.getElementById('countcontainer');
+  countContainer.innerHTML = catsData[Number(catid)].clickCount;
+}
+
+function showCatImage(catid) {
+  const imagecontainer = document.getElementById('imagecontainer');
+  const catImageDiv = `<img src="${catsData[Number(catid)].imageURL}" onClick="increment(event, ${catid})"/>`;
+  imagecontainer.innerHTML = catImageDiv;
+  showCorrectCatCounter(catid);
+}
+
+/** on click function for cats  which increments cat counter
    * @param{Event} event click event for cat
    * @param{Number} catid Cat unique identifier
    * */
-  function increment(event, catid) {
-    const target = event.target.parentElement;
-     const cat = catsData[Number(catid)];
-    cat.clickCount = cat.clickCount + 1;
-    target.children[2].innerHTML = cat.clickCount;
-  }
-   
+function increment(event, catid) {
+  const cat = catsData[Number(catid)];
+  cat.clickCount += 1;
+  showCorrectCatCounter(catid);
+}
+

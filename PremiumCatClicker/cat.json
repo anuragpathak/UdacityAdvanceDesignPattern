@@ -1,0 +1,50 @@
+[
+    {
+      "id": 0,
+      "name": "Billi 1",
+      "imageURL": "./images/cat1.jpg",
+      "clickCount": 0
+    },
+    {
+        "id": 1,
+        "name": "Billi 2",
+        "imageURL": "./images/cat2.jpg",
+        "clickCount": 0
+    },
+    {
+        "id": 2,
+        "name": "Billi 3",
+        "imageURL": "./images/cat3.jpg",
+        "clickCount": 0
+    },
+    {
+        "id": 3,
+        "name": "Billi 4",
+        "imageURL": "./images/cat4.jpg",
+        "clickCount": 0
+    },
+    {
+        "id": 4,
+        "name": "Billi 5",
+        "imageURL": "./images/cat5.jpg",
+        "clickCount": 0
+    },
+    {
+        "id": 5,
+        "name": "Billi 6",
+        "imageURL": "./images/cat6.jpg",
+        "clickCount": 0
+    },
+    {
+        "id": 6,
+        "name": "Billi 7",
+        "imageURL": "./images/cat7.jpg",
+        "clickCount": 0
+    },
+    {
+        "id": 7,
+        "name": "Billi 8",
+        "imageURL": "./images/cat8.jpg",
+        "clickCount": 0
+    }
+  ]
